@@ -1,0 +1,110 @@
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+}
+
+.circle {
+    margin-left: 200px;
+    position:relative;
+    display:inline-block;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    overflow:hidden;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+.circle:before, .circle:after, .circle > div:before, .circle > div:after {
+    content:'';
+    position:absolute;
+    z-index:-1;
+}
+.circle:before {
+    bottom:50%;
+    left:50%;
+    margin-left:5px;
+    margin-bottom:4px;
+    border-top: 300px solid transparent;
+    border-right:150px solid black;
+}
+.circle:after{
+    top:50%;
+    left:50%;
+    margin-left:5px;
+    margin-top:4px;
+    border-right:150px solid white;
+    border-bottom:300px solid transparent;
+}
+.sector1:before {
+    bottom:50%;
+    right:50%;
+    margin-right:5px;
+    margin-bottom:4px;
+    border-top: 300px solid transparent;
+    border-left:150px solid black;
+}
+.sector1:after {
+    bottom:50%;
+    margin-bottom:10px;
+    border-top: 300px solid white;
+    border-right:150px solid transparent;
+    border-left:150px solid transparent;
+}
+.sector2:before {
+    top:50%;
+    right:50%;
+    margin-right:5px;
+    margin-top:4px;
+    border-bottom:300px solid transparent;
+    border-left:150px solid white;
+}
+.sector2:after {
+    top:50%;
+    margin-top:10px;
+    border-right:150px solid transparent;
+    border-bottom:300px solid black;
+    border-left:150px solid transparent;
+}
+.round-middle{
+    position:absolute;
+    top:121px; left:121px;
+    width:50px; height:50px;
+    border:4px solid #fff;
+    border-radius:50%;
+    background:red;
+}
+
+.btn_wrap {
+  margin-top: 50px;
+  margin-left: 200px;   
+} 
+
+.btn {
+  display: inline-block;
+  margin-right: 20px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  background: black;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 30px;
+  text-decoration: none;
+}
+.current {
+    background: red;
+} 

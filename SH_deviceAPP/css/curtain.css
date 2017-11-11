@@ -1,0 +1,76 @@
+body{ font-family: 'tahoma';
+overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: #443535;
+            background-image: linear-gradient(45deg, #536058 25%, transparent 25%, rgba(242, 236, 236, 0) 75%, #49554E 75%, #536159), linear-gradient(-45deg, #4D5A53 25%, transparent 25%, transparent 75%, #536058 75%, #4C5851);
+            background-size: 100px 100px;
+ }
+		h4, p { padding-left:5px; padding-right:5px; }
+		p { font-size:14px; }
+/*BOTH CURTAIN IMAGES CLASS*/
+		img.curtain{
+			height:300px; /* so jQuery doesn't keep ascpect ration when animating the width '*/
+			z-index:99; /* to show it on top of the content*/
+		}
+		
+		/*LEFT CURTAIN IMAGE CLASS*/
+		img.curtainLeft{
+			position:absolute; /*absolute positioning is important*/
+			left:0px; /*position it on left side of the container*/
+		}
+		
+		/*RIGHT CURTAIN IMAGE CLASS*/
+		img.curtainRight{
+			position:absolute; /*absolute positioning is important*/
+			right:0px; /*position it on the right side of the container*/
+		}
+		
+		/*THE CLASS OF THE WRAPPING DIV (THAT WRAPS EVERYTHING)*/
+		.curtain_wrapper{
+			width:400px; /* same as width of both the images summed */
+			height:300px; /* same as height of the images*/
+			position:relative; /*relative position so we can absolutely position the child elements*/
+			overflow:hidden; /*hide everything out of boundaries (in this case for the description div)*/
+			color:white; /* just styling*/
+			background:linear-gradient(white,orange,white); /* just styling*/
+			border: black 2px solid;
+			
+		}
+		
+		/*THE TEXT DIV CLASS (BEHIND THE CURTAINS)*/
+		.content{
+			position:relative; /*so we can center it*/
+			width: 300px; /*curtain_wrapper width - shrinked image width (50px is image when shrinked)*/
+			margin:0px auto; /*center it*/
+			display:none; /*we don't want our users to see the content while the curtain images are loading*/
+		}
+		
+		/*DESCRIPTION DIV CLASS (THE TEXT ON TOP LEFT SIDE IN THE DEMO)*/
+		.description{
+			position:absolute; /*absolute position is important*/
+			top:0px; /*position it on top of the curtain_wrapper*/
+			z-index:100; /*show it on top of the curtain (remember that they have z-index of 99)*/
+			/*styling bellow*/
+			padding:5px; 
+			text-align:center;
+			font-size:15px;
+			background:#eee;
+			border:1px solid #ccc;
+			border-left:0px;
+			border-top:0px;
+			color:black;
+		}
+
+		.portrait {
+            position: absolute;
+            left: 900px;
+            bottom: 450px;
+            width: 130px;
+            height: 160px;
+            background: url('../image/0721158c75b17f7ada105db9f8b4e32f.jpg');
+            animation: picture-falling 5s;
+            opacity: 1;
+            box-shadow: 0 0 0 10px #C7C3C3, 0 0 0 15px #E6E2E2, 0 0 25px 15px grey;
+          background-size: cover;
+        }
